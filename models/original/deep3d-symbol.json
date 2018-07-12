@@ -959,7 +959,7 @@
     }, 
     {
       "op": "SoftmaxActivation", 
-      "param": {"type": "channel"}, 
+      "param": {"mode": "channel"}, 
       "name": "softmax", 
       "inputs": [[105, 0]], 
       "backward_source_id": -1
