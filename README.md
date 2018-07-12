@@ -5,12 +5,14 @@
 ```
 docker build -f Dockerfile.original -t images.borgy.elementai.lan/deep3d:original .
 docker build -f Dockerfile.mxnet-1.2.0 -t images.borgy.elementai.lan/deep3d:mxnet-1.2.0 .
+docker build -f Dockerfile.mxnet-1.2.0-cuda9.1 -t images.borgy.elementai.lan/deep3d:mxnet-1.2.0-cuda9.1 .
 ```
 
 ## Run Jupyter notebook
 ```
-nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d:original jupyter notebook --ip=0.0.0.0 --no-browser --allow-root deep3d.original.ipynb
+nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d:original jupyter notebook --ip=0.0.0.0 --no-browser deep3d.original.ipynb
 nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d:mxnet-1.2.0 jupyter notebook --ip=0.0.0.0 --no-browser --allow-root deep3d.mxnet-1.2.0.ipynb
+nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d:mxnet-1.2.0-cuda9.1 jupyter notebook --ip=0.0.0.0 --no-browser --allow-root deep3d.mxnet-1.2.0.ipynb
 ```
 
 
