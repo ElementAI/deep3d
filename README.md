@@ -2,9 +2,9 @@
 
 ## Build
 
- ```
-docker build -f Dockerfile.original .
-docker build -f Dockerfile.mxnet-1.2.0 .
+```
+docker build -f Dockerfile.original -t images.borgy.elementai.lan/deep3d:original .
+docker build -f Dockerfile.mxnet-1.2.0 -t images.borgy.elementai.lan/deep3d:mxnet-1.2.0 .
 ```
 
 ## Run Jupyter notebook
