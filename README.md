@@ -7,6 +7,11 @@ docker build -f Dockerfile.original .
 docker build -f Dockerfile.mxnet-1.2.0 .
 ```
 
+## Run Jupyter notebook
+```
+nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d jupyter notebook --ip=0.0.0.0 --no-browser --allow-root deep3d.original.ipynb
+nvidia-docker run -v $(pwd)/output:/work/output --rm -ti -p 8888:8888 images.borgy.elementai.lan/deep3d jupyter notebook --ip=0.0.0.0 --no-browser --allow-root deep3d.mxnet-1.2.0.ipynb
+```
 
 
 ## How To Run
